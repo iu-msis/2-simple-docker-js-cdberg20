@@ -1,0 +1,81 @@
+html,
+body {
+  background-color: #f0eadf;
+}
+
+p {
+  padding-left: 5em;
+  padding-right: 5em;
+      }
+h1 {
+
+  margin: 1em;
+text-align: center;
+color:  #CC840C;
+}
+h2 {
+  color: #CC840C;
+  text-align: center;
+}
+
+h6 {
+  font-size: 10px;
+  color: 	#A9A9A9;
+}
+
+a:link {
+  color: #A9A9A9;
+}
+a:hover {
+  color: #cfe3da;
+  text-decoration: none;
+}
+
+thead {
+  background: #D3E6E0;
+  color:#CC840C;
+  font-size: 20px;
+}
+
+form {
+  margin: 4px;
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+#bookshop {
+  text-align: center;
+
+}
+
+.table{
+  margin: 15px;
+}
+
+.btn{
+background-color: #cfe3da;
+color: black;
+border: none;
+}
+
+.btn:hover{
+  background-color: #c59127;
+}
+
+.topbanner {
+  width: 100%;
+}
+
+.profile-picture {
+padding-left: 2em;
+}
+
+
+nav,
+navbar {
+  background-color:  	#e2e9a5;
+  color: #CC840C;
+}
+.navbar-toggler {
+  background-color: #d3e6e0;
+}
