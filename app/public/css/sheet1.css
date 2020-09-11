@@ -47,7 +47,9 @@ form {
   text-align: center;
 
 }
-
+#bookTable {
+  text-align: center;
+}
 .table{
   margin: 15px;
 }
