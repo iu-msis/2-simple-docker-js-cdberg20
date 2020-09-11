@@ -43,7 +43,7 @@
     <br>
 
 <!-- NOTE: Book List Table -->
-<table class="table table-hover">
+<table id="bookTable" class="table table-hover">
   <thead>
     <tr>
       <th scope="col">Title</th>
@@ -136,5 +136,9 @@
   </form>
   <br>
 
-
+  <script src="js/tablesort.min.js"></script>
+  <script>
+    //Table sort plugin from http://tristen.ca/tablesort/demo/
+    new Tablesort(document.getElementById('bookTable'));
+  </script>
   </body>
