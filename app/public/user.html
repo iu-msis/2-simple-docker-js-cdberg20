@@ -53,13 +53,13 @@
         <li>Email</li>
       </div>
 
-      <div id="panelRight" class="col cardPane cardPaneRight">
+      <div id="userProfile" class="col cardPane cardPaneRight">
         <div class="userProfile" v-for="user in userList">
           <ul>
-          <li><span class="name">{{ user.user-name }}</span></li>
-          <li><span class="country">{{ user.country }}</span></li>
-          <li><span class="age">{{ user.age }}</span></li>
-          <li><span class="email">{{ user.email }}</span></li>
+          <li>{{ userName }}</li>
+          <li>{{ userCountry }}</li>
+          <li>{{ userAge }}</li>
+          <li>{{ userEmail }}</li>
         </ul>
       </div>
     </div>

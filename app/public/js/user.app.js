@@ -1,19 +1,31 @@
 var app = new Vue({
-  el: '#panelRight',
-  data: {},
-  userList: [],
-  user: {},
+  el: '#userProfile',
+  data: {
+    userName: {},
+    userCountry: {},
+    userAge: {},
+    userEmail:{},
+  },
+
   created() {
-    fetch("https://randomuser.me/api")
-    .then( function(response) {response.json()} )
-    .then( json => {
-      this.user = json;
-      const displayUserName = ({ title, last, first }) => {
-        document.querySelector(
-          ".user-name"
-        ).textContent = `${title} ${first} ${last}`;
-      };
-      console.log(json)
-    });
-  }
-})
+    console.log('this vue app has been created!');
+  },
+  created() {
+    this.fetchUser();
+  },
+
+      methods: {
+        fetchUser: function() {
+          fetch("https://randomuser.me/api")
+          .then( function(response) {response.json()} )
+          .then( data => {
+            var userData = data.results[0];
+            console.log(userData);
+            this.userName = userData.name.first + " " + userData.name.last;
+            this.userCountry = userData.country;
+            this.userAge = userData.age;
+            this.userEmail = userData.email;
+        });
+      }
+    }
+  })
