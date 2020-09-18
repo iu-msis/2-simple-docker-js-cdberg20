@@ -50,6 +50,11 @@ form {
 #bookTable {
   text-align: center;
 }
+
+ul{
+list-style: none;
+}
+
 .table{
   margin: 15px;
 }
