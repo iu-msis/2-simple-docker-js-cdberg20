@@ -8,7 +8,11 @@ var app = new Vue({
     .then( function(response) {response.json()} )
     .then( json => {
       this.user = json;
-
+      const displayUserName = ({ title, last, first }) => {
+        document.querySelector(
+          ".user-name"
+        ).textContent = `${title} ${first} ${last}`;
+      };
       console.log(json)
     });
   }
