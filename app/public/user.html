@@ -37,8 +37,11 @@
 </nav>
 
 <h1> Profile</h1>
-<div  class="profile-picture">
-<a href="img\50.jpg" target="_blank"> <img  src="img\50.jpg" alt="Profile Picture" width=80></a>
+<div id="userProfile">
+<div class="profile-picture">
+<a v-bind:href="userImgLarge" target="_blank">
+  <img v-bind:src="userImgThumb" alt="Profile Picture">
+</a>
   <h6> From <a href="https://randomuser.me/"> https://randomuser.me/ </a>
 </div>
 <h2>Info</h2>
@@ -49,19 +52,22 @@
         <ul>
         <li>Name</li>
         <li>Country of Orgin</li>
+        <li>Birthdate</li>
         <li>Age (years)</li>
         <li>Email</li>
       </div>
 
-      <div id="userProfile" class="col">
+      <div class="col">
           <ul>
           <li>{{ userName }}</li>
           <li>{{ userCountry }}</li>
+          <li>{{ userBirthDate }}</li>
           <li>{{ userAge }}</li>
           <li><a v-bind:href="'mailto:'+ userEmail" target = "_blank">{{ userEmail }}</a></li>
         </ul>
     </div>
   </div>
+</div>
 </div>
 <br><br>
 
@@ -75,5 +81,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/user.app.js"></script>
+
   </body>
 </html>
