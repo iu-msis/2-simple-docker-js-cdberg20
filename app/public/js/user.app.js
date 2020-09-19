@@ -27,7 +27,7 @@ var app = new Vue({
         this.userImgThumb = userData.picture.thumbnail;
         this.userName = userData.name.first + " " + userData.name.last;
         this.userCountry = userData.location.country;
-        this.userBirthDate = userData.dob.date;
+        this.userBirthDate = userData.dob.date.split('-')[0]+"."+userData.dob.date.split('-')[1]+"."+userData.dob.date.split('-')[2].substring(0,2);
         this.userAge = userData.dob.age;
         this.userEmail = userData.email;
         })
@@ -42,7 +42,7 @@ var app = new Vue({
           this.userImgThumb = userData.picture.thumbnail;
           this.userName = userData.name.first + " " + userData.name.last;
           this.userCountry = userData.location.country;
-          this.userBirthDate = userData.dob.date;
+          this.userBirthDate = userData.dob.date.split('-')[0]+userData.dob.date.split('-')[1]+userData.dob.date.split('-')[2];
           this.userAge = userData.dob.age;
           this.userEmail = userData.email;
           })
