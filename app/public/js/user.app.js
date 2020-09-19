@@ -9,12 +9,14 @@ var app = new Vue({
     userAge: "",
     userEmail: "",
   },
-
   created() {
     this.fetchUser();
   },
 
   methods: {
+    formatDate(d) {
+      return moment(d).format("dddd, MMMM Do YYYY");
+    },
     fetchUser: function() {
       fetch("https://randomuser.me/api/")
       .then(response =>response.json())
