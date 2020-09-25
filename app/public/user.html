@@ -69,7 +69,9 @@
   </div>
 </div>
     <div align="center">
-      <input v-on:submit="onSubmit" class="btn btn-primary" type="submit" value="Switch User">
+      <form v-on:submit.prevent="fetchUser">
+      <button>Switch User</button>
+      </form>
     </div>
 </div>
 <br><br>
