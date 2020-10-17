@@ -124,11 +124,9 @@
   <h2>Add a Comment:</h2><br>
 
   <form id="newCommentForm" v-on:submit.prevent="createComment()">
-    <div>
       <label for="newComment">Comment</lablel><br>
-      <input id="commentText" type="text" v-model="newComment.commentText">
-    </div>
-    <input id="submitNewComment" type="submit"  value="Submit Comment" class="btn btn-primary">
+      <input id="commentText" type="text" v-model="newComment.commentText"><br>
+    <input id="submitNewComment" type="submit" value="Submit Comment" class="btn btn-primary">
   </form>
 
 
@@ -173,14 +171,15 @@
   <br>
 
 
-  <script src="js/tablesort.min.js"></script>
-    <!--Table sort plugins from http://tristen.ca/tablesort/demo/-->
+ <script src="js/tablesort.min.js"></script>
+    <!--Table sort plugins from http://tristen.ca/tablesort/demo/ -->
   <script src='js/tablesort.number.min.js'></script>
 
   <script>
     //Table sort plugin from http://tristen.ca/tablesort/demo/
     new Tablesort(document.getElementById('bookTable'));
   </script>
+
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
