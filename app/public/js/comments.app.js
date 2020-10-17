@@ -1,18 +1,55 @@
 var app = new Vue({
   el: '#commentsApp',
   data: {
-    reviewList: id: "",
-    commentText: "",
-  },
-  created() {
-    this.fetchComments();
-  },
+    commentsList:[{
+      id: '',
+      commentText: '',
+    }],
+    newComment:{
+      id:'',
+      commentText:''
+    }
+    },
+
+    created(){
+      this.fetchComments();
+      this.createComment();
+    },
 
   methods: {
 
     fetchComments: function() {
-      fetch("api/index.php")
-      .then(response =>response.json())
-      .then(data => {
-        var userData = data.results[0];
-        console.log(userData);
+      fetch("api/comments/")
+      .then(response => response.json())
+      .then(json => {
+        this.commentsList = json;
+
+        console.log(this.commentsList);
+      });
+    },
+    createComment(){
+      fetch("api/comments/", {
+        method: 'POST',
+        body: JSON.stringify(this.newComment),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
+      .then( response => response.json())
+      .then( json => {
+        console.log("Returned from post:", json);
+        this.commentsList.push(json[0]);
+        this.newComment = this.newCommentData();
+      });
+        console.log("Creating (POSTing)...!");
+        console.log(this.newComment);
+    },
+    newCommentData() {
+      return {
+        id: '',
+        commentText: ''
+      }
+    }
+  }
+
+})

@@ -99,9 +99,45 @@
 </table>
 <br>
 
-<!-- NOTE: New Book Form -->
+
+<!-- NOTE: New Comments Form -->
+<h1>Comments</h1><br>
+
+<div id="commentsApp">
+  <table id="commentTable" class="sort table ttable-hover">
+    <thead>
+        <tr>
+          <th>ID</th>
+          <th>Comment</th>
+
+        </tr>
+      </thead>
+      <tbody id="commentTableBody">
+        <tr v-for="c in commentsList">
+          <td>{{ c.id }}</td>
+          <td>{{ c.commentText }}</td>
+
+        </tr>
+
+      </tbody>
+      </table>
+  <h2>Add a Comment:</h2><br>
+
+  <form id="newCommentForm" v-on:submit.prevent="createComment()">
+    <div>
+      <label for="newComment">Comment</lablel><br>
+      <input id="commentText" type="text" v-model="newComment.commentText">
+    </div>
+    <input id="submitNewComment" type="submit"  value="Submit Comment" class="btn btn-primary">
+  </form>
+
+
+</div>
+
+
+<!-- NOTE: New book Form -->
 <br>
-  <h2>Add a New Book:</h2>
+  <h2>Add a Book:</h2>
 
   <form>
     <div class="form-group">
@@ -136,6 +172,7 @@
   </form>
   <br>
 
+
   <script src="js/tablesort.min.js"></script>
     <!--Table sort plugins from http://tristen.ca/tablesort/demo/-->
   <script src='js/tablesort.number.min.js'></script>
@@ -144,4 +181,14 @@
     //Table sort plugin from http://tristen.ca/tablesort/demo/
     new Tablesort(document.getElementById('bookTable'));
   </script>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/comments.app.js"></script>
+
   </body>

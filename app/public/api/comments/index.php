@@ -6,12 +6,12 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM Comment';
+$sql = 'SELECT * FROM Comments';
 $vars = [];
 
 if (isset($_GET['id'])) {
   // This is an example of a parameterized query
-  $sql = 'SELECT * FROM Comment WHERE id = ?';
+  $sql = 'SELECT * FROM Comments WHERE id = ?';
   $vars = [ $_GET['id'] ];
 }
 
