@@ -6,7 +6,6 @@ var app = new Vue({
       commentText: '',
     }],
     newComment:{
-      id:'',
       commentText:''
     }
     },
@@ -46,7 +45,6 @@ var app = new Vue({
     },
     newCommentData() {
       return {
-        id: '',
         commentText: ''
       }
     }
